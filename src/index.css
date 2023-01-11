@@ -76,6 +76,23 @@ body {
   letter-spacing: 10px;
 }
 
+.message-form-button {
+	background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+	width: 100%;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+.message-form-button:hover {
+	background: #bf1650;
+}
+
 .auth-wrapper button[type="submit"]:hover,
 .auth-wrapper input[type="submit"]:hover {
   background: #bf1650;
