@@ -32,7 +32,7 @@ function LoginPage() {
 	
 	return (
 		<div className="auth-wrapper">
-			<div style={{ textAlign: 'center', color: 'white' }}><h3>Login</h3></div>
+			<div style={{ textAlign: 'center'}}><h3>Login</h3></div>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<label>Email</label>
 				<input name="email" type="email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
