@@ -10,7 +10,13 @@ import Card from 'react-bootstrap/Card';
 import { FaLock } from 'react-icons/fa';
 import { MdFavorite } from 'react-icons/md';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { useSelector } from 'react-redux';
+
 function MessageHeader() {
+	
+	const chatRoom = useSelector(state => state.chatRoom.currentChatRoom);
+	const user = useSelector(state => state.user.currentUser);
+	
 	return (
 		<div style={{
 			width: '100%',
@@ -25,7 +31,7 @@ function MessageHeader() {
 					<Col>
 						<h2>
 							<FaLock />
-							ChatRoomName
+							{ chatRoom && chatRoom.name }
 							<MdFavorite />
 						</h2>
 					</Col>
@@ -42,7 +48,9 @@ function MessageHeader() {
 				</Row>
 				<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
 					<p>
-						<Image /> {" "}user name
+						<Image src={ chatRoom && chatRoom.createdBy.image }
+							roundedCircle style={{ width: '30px', height: '30px' }} /> 
+							{" "} { chatRoom && chatRoom.createdBy.name }
 					</p>
 				</div>
 				<Row>
